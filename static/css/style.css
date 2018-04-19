@@ -1,0 +1,425 @@
+.sidebar {
+    /* display: none;*/
+}
+
+.square {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+.c-331196-policy,
+.c-E54C00-policy,
+.c-FFAA00-policy,
+.c-E69800-policy,
+.c-E7E600-policy,
+.c-014B73-policy,
+.c-0086A7-policy,
+.c-704425-policy,
+.c-71A701-policy,
+.c-9ae32c-policy,
+.c-f4a261-policy,
+.c-fffd38-policy,
+.c-fc6621-policy,
+.c-da0a16-policy,
+.c-fc1999-policy,
+.c-331196-policy,
+.c-071ac8-policy,
+.c-1a9bfc-policy,
+.c-18a81b-policy,
+.c-0a650c-policy,
+.c-653308-policy,
+.c-986638-policy,
+.c-bbbbbb-policy,
+.c-888888-policy,
+.c-444444-policy,
+.c-000000-policy,
+.c-9cec5b-policy,
+.c-50c5b7-policy,
+.c-e76f51-policy,
+.c-8d99ae-policy {
+    color: black;
+    background-size: 5px 5px;
+    background-position: 2px 2px;
+    font-weight: 400;
+    /*border:1px solid;*/
+    /*background-image: url(img/hatch.png);*/
+    /*background-repeat: repeat-x*/
+}
+
+.c-331196-policy span,
+.c-E54C00-policy span,
+.c-FFAA00-policy span,
+.c-E69800-policy span,
+.c-E7E600-policy span,
+.c-014B73-policy span,
+.c-0086A7-policy span,
+.c-704425-policy span,
+.c-71A701-policy span,
+.c-9ae32c-policy span,
+.c-f4a261-policy span,
+.c-fffd38-policy span,
+.c-fc6621-policy span,
+.c-da0a16-policy span,
+.c-fc1999-policy span,
+.c-331196-policy span,
+.c-071ac8-policy span,
+.c-1a9bfc-policy span,
+.c-18a81b-policy span,
+.c-0a650c-policy span,
+.c-653308-policy span,
+.c-986638-policy span,
+.c-bbbbbb-policy span,
+.c-888888-policy span,
+.c-444444-policy span,
+.c-000000-policy span,
+.c-9cec5b-policy span,
+.c-50c5b7-policy span,
+.c-e76f51-policy span,
+.c-8d99ae-policy span,
+.c-6fdb6f-policy span,
+.c-d0f4d0-policy span,
+.c-71b8ff-policy span,
+.c-afd7ff-policy span,
+.c-808080-policy span,
+.c-b2b2b2-policy span,
+.c-598600-policy span,
+.c-006600-policy span,
+.c-6600cc-policy span,
+.c-9966ff-policy span,
+.c-ff0000-policy span,
+.c-ff8989-policy span,
+.c-996633-policy span,
+.c-cc9900-policy span,
+.c-ffcc00-policy span,
+.c-fff1b7-policy span,
+.c-24496e-policy span,
+.c-3b77b3-policy span,
+.c-dddddd-policy span,
+.c-f2f2f2-policy span {
+    background: #FFFFFF;
+}
+
+.c-331196 {
+    background-color: #331196;
+    color: #FFFFFF;
+}
+
+.c-E54C00 {
+    background-color: #E54C00;
+    color: #FFFFFF;
+}
+
+.c-FFAA00 {
+    background-color: #FFAA00;
+    color: #FFFFFF;
+}
+
+.c-E69800 {
+    background-color: #E69800;
+    color: #FFFFFF;
+}
+
+.c-E7E600 {
+    background-color: #E7E600;
+    color: #FFFFFF;
+}
+
+.c-014B73 {
+    background-color: #014B73;
+    color: #FFFFFF;
+}
+
+.c-0086A7 {
+    background-color: #0086A7;
+    color: #FFFFFF;
+}
+
+.c-704425 {
+    background-color: #704425;
+    color: #FFFFFF;
+}
+
+.c-71A701 {
+    background-color: #71A701;
+    color: #FFFFFF;
+}
+
+.c-9ae32c {
+    background-color: #9ae32c;
+    color: #FFFFFF;
+}
+
+.c-f4a261 {
+    background-color: #f4a261;
+    color: #FFFFFF;
+}
+
+.c-fc6621 {
+    background-color: #fc6621;
+    color: #FFFFFF;
+}
+
+.c-da0a16 {
+    background-color: #da0a16;
+    color: #FFFFFF;
+}
+
+.c-fc1999 {
+    background-color: #fc1999;
+    color: #FFFFFF;
+}
+
+.c-331196 {
+    background-color: #331196;
+    color: #FFFFFF;
+}
+
+.c-071ac8 {
+    background-color: #071ac8;
+    color: #FFFFFF;
+}
+
+.c-1a9bfc {
+    background-color: #1a9bfc;
+    color: #FFFFFF;
+}
+
+.c-18a81b {
+    background-color: #18a81b;
+    color: #FFFFFF;
+}
+
+.c-0a650c {
+    background-color: #0a650c;
+    color: #FFFFFF;
+}
+
+.c-653308 {
+    background-color: #653308;
+    color: #FFFFFF;
+}
+
+.c-986638 {
+    background-color: #986638;
+    color: #FFFFFF;
+}
+
+.c-bbbbbb {
+    background-color: #bbb;
+    color: #FFFFFF;
+}
+
+.c-888888 {
+    background-color: #888;
+    color: #FFFFFF;
+}
+
+.c-444444 {
+    background-color: #444;
+    color: #FFFFFF;
+}
+
+.c-000000 {
+    background-color: #000;
+    color: #FFFFFF;
+}
+
+.c-f4a261 {
+    background-color: #f4a261;
+    color: #FFFFFF;
+}
+
+.c-9cec5b {
+    background-color: #9cec5b;
+    color: #FFFFFF;
+}
+
+.c-50c5b7 {
+    background-color: #50c5b7;
+    color: #FFFFFF;
+}
+
+.c-e76f51 {
+    background-color: #e76f51;
+    color: #FFFFFF;
+}
+
+.c-8d99ae {
+    background-color: #8d99ae;
+    color: #FFFFFF;
+}
+
+.c-6fdb6f {
+    background-color: #6fdb6f;
+    color: #FFFFFF;
+}
+
+.c-d0f4d0 {
+    background-color: #d0f4d0;
+    color: #FFFFFF;
+}
+
+.c-71b8ff {
+    background-color: #71b8ff;
+    color: #FFFFFF;
+}
+
+.c-afd7ff {
+    background-color: #afd7ff;
+    color: #FFFFFF;
+}
+
+.c-808080 {
+    background-color: #808080;
+    color: #FFFFFF;
+}
+
+.c-b2b2b2 {
+    background-color: #b2b2b2;
+    color: #FFFFFF;
+}
+
+.c-598600 {
+    background-color: #598600;
+    color: #FFFFFF;
+}
+
+.c-006600 {
+    background-color: #006600;
+    color: #FFFFFF;
+}
+
+.c-6600cc {
+    background-color: #6600cc;
+    color: #FFFFFF;
+}
+
+.c-9966ff {
+    background-color: #9966ff;
+    color: #FFFFFF;
+}
+
+.c-ff0000 {
+    background-color: #ff0000;
+    color: #FFFFFF;
+}
+
+.c-ff8989 {
+    background-color: #ff8989;
+    color: #FFFFFF;
+}
+
+.c-996633 {
+    background-color: #996633;
+    color: #FFFFFF;
+}
+
+.c-cc9900 {
+    background-color: #cc9900;
+    color: #FFFFFF;
+}
+
+.c-ffcc00 {
+    background-color: #ffcc00;
+    color: #FFFFFF;
+}
+
+.c-fff1b7 {
+    background-color: #fff1b7;
+    color: #FFFFFF;
+}
+
+.c-24496e {
+    background-color: #24496e;
+    color: #FFFFFF;
+}
+
+.c-3b77b3 {
+    background-color: #3b77b3;
+    color: #FFFFFF;
+}
+
+.c-dddddd {
+    background-color: #dddddd;
+    color: #FFFFFF;
+}
+
+.c-f2f2f2 {
+    background-color: #f2f2f2;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1000;
+        display: block;
+        /*padding: 20px;*/
+        overflow-x: hidden;
+        overflow-y: hidden;
+        /*background-color: #f5f5f5;*/
+        border-right: 1px solid #eee;
+    }
+}
+
+section.synthesishistory {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", Times, serif;
+    font-size: 26px;
+    font-weight: normal;
+    margin-top: -2px;
+}
+
+h2 {
+    font-family: "Raleway", Times, serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: -2px;
+}
+
+.main {
+    padding: 20px;
+    /*padding-bottom: 500px;*/
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+.breakpoint-current {
+    left: 0;
+    margin-top: -10px;
+    position: fixed;
+    /* top: 33.3333%; */
+    width: 3px;
+    height: 3px;
+    background: red;
+    ;
+}
+
+.viewing {
+    background: #eee;
+}
+
+section {
+    padding: 5px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.page-header {
+    margin-bottom: 0px;
+}
