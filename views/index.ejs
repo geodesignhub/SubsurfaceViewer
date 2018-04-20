@@ -32,8 +32,8 @@
 
     <script type="text/javascript" src="/assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/geojsonlint/geojsonlint.js"></script>
-    <script type="text/javascript" src="/assets/js/humane/humane.min.js">
-    </script>
+    <script type="text/javascript" src="/assets/js/humane/humane.min.js"></script>
+    
     <script src="/assets/Build/Cesium/Cesium.js"></script>
     <style>
         @import url(/assets/Build/Cesium/Widgets/widgets.css);
@@ -73,9 +73,10 @@
 
             <div class="col-sm-3 col-md-3 main">
 
-                <h1 class="page-header">Geodesignhub Globe 3D Viewer</h1>
+                <h1 class="page-header">Geodesignhub Subsurface Viewer</h1>
+                <small>&copy; 2018 <a href="https://www.geodesignhub.com/">Geodesign Hub</a>, see the <a href="https://geodesignhub.github.io/Globe3DViewer">GitHub repository</a> for more information.</small>
                 <section class="information">
-                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</div>
+                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span id="procstatus">Processing</span>...<br><small>It may take some time for the server to process all geometries for the first time, the scene will refresh once the processing is complete.</small></div>
                     <br>
                     <div id="systemsCBCont" style="display:none">
                         <h4>Systems</h4>
@@ -85,14 +86,7 @@
                     <h4>Streets</h4>
                     <input id="showStreetsCB" class="checkbox-custom" name="checkbox-1" type="checkbox" checked> Display generated streets<br><br>
 
-                    <!-- <h4>Refresh</h4>
-                    <div>
-                        <p>
-                            <button class="button" onclick="submitGJ()">Regenerate Scene</button>-->
-
-                    <!--</p>
-                    </div> -->
-
+                   
                     <div id="toolbar">
                         <h4>Basemap</h4>
                         <table>
@@ -301,96 +295,8 @@
             }
         }
 
-        function submitGJ() {
-            var selectedsystems = [];
-            $('#systemsCB input:checked').each(function() {
-                selectedsystems.push($(this).attr('id'));
-            });
 
-            // var gj = document.getElementById("gjTA").value;
-
-            var gjerrors = geojsonhint.hint(inputGJ);
-
-            if (gjerrors.length > 0) {
-                humane.log("The GeoJSON you have entered is invalid.. ", {
-                    addnCls: 'humane-flatty-error'
-                });
-            } else {
-                gj = JSON.parse(inputGJ);
-                var genstreets = document.getElementById("showStreetsCB").checked;
-                start3dWorker(gj, genstreets, selectedsystems);
-                $("#loadingGIF").show();
-            }
-        }
-
-        function start3dWorker(allFeaturesList, genstreets, selectedsystems) {
-            humane.log("Processing..", {
-                addnCls: 'humane-flatty-info'
-            });
-            var threeDWorker = new Worker('/assets/workers/3dlib.js');
-            threeDWorker.onerror = function(e) {
-                $("#loadingGIF").hide();
-                console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
-                humane.log("There was a error in processing, please try again by clicking the Regenrate Scene button.. ", {
-                    addnCls: 'humane-flatty-error'
-                });
-            };
-            threeDWorker.postMessage({
-                'allFeaturesList': JSON.stringify(allFeaturesList),
-                'existingroads': JSON.stringify(roads),
-                'genstreets': JSON.stringify(genstreets),
-                'selectedsystems': JSON.stringify(selectedsystems)
-            });
-
-            threeDWorker.addEventListener('message', function(e) {
-                //  console.log(e.data);    
-                if (e.data.mode === 'status') {
-                    // update status. 
-                    updateWorkerStatus(e.data.percentcomplete);
-                } else {
-
-                    generatedData = e.data.polygons;
-                    var latlng = e.data.center;
-                    setMapCenter(latlng);
-                    $("#loadingGIF").hide();
-                    updateUnitCounts(generatedData);
-                    // updateGLData(JSON.parse(generatedData));
-                }
-            }, false);
-        }
-
-        function updateUnitCounts(generatedData) {
-            var unitsCountWorker = new Worker('/assets/workers/performUnitCounts.js');
-            unitsCountWorker.onerror = function(e) {
-                console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
-                humane.log("There was a error in counting units, please try again by clicking the Regenrate Scene button.. ", {
-                    addnCls: 'humane-flatty-error'
-                });
-            };
-            unitsCountWorker.postMessage({
-                'allFeaturesList': generatedData,
-                'systems': JSON.stringify(systems)
-            });
-
-            unitsCountWorker.addEventListener('message', function(e) {
-
-                if (e.data.mode === 'status') {
-                    // update status. 
-                    updateWorkerStatus(e.data.percentcomplete);
-                } else {
-                    var sysUnits = e.data.sysUnits;
-                    displayUnitCounts(JSON.parse(sysUnits));
-                }
-            }, false);
-        }
-
-        function displayUnitCounts(sysUnits) {
-            for (var sysname in sysUnits) {
-                var curUnitCount = sysUnits[sysname];
-                $("#" + sysname + "-units").html(curUnitCount + " units");
-            }
-
-        }
+    
 
         function updateWorkerStatus(percentcomplete) {
             var pc = percentcomplete.toString() + '% processing completed';
@@ -402,7 +308,7 @@
 
             // document.getElementById("ccontrols").style.visibility = "visible";
             // set new center
-            latlng = JSON.parse(latlng);
+            latlng = latlng.split(',');
             var lat = latlng[0];
             var lng = latlng[1];
             cameralat = lat;
@@ -498,6 +404,62 @@
         }
     </script>
     <script>
+
+        function processGeoms() {
+
+
+            setMapCenter(center);
+            $("#loadingGIF").hide();
+            
+            if (final3DGeoms.features.length > 0) {
+                // $("#gjTA").text(JSON.stringify(gjresults));
+
+                // inputGJ = JSON.stringify(gjresults);
+                generateSystemCB(systems);
+
+                // updateGLData(final3DGeoms, true);
+                $('#systemsCBCont').show();
+                // submitGJ();
+                $("#showStreetsCB").click(function() {
+                    var showstreets = ($(this).is(":checked")) ? 1 : 0;
+                    var selectedsystems = [];
+                    $('#systemsCB input:checked').each(function() {
+                        selectedsystems.push($(this).attr('id'));
+                    });
+                    
+                });
+                $('#systemsCB').click(function() {
+                    var selectedsystems = [];
+                    $('#systemsCB input:checked').each(function() {
+                        selectedsystems.push($(this).attr('id'));
+                    });
+                    var showStreets = ($('#showStreetsCB').is(":checked")) ? 1 : 0;
+                    $("#loadingGIF").show();
+                    var constrainWorker = new Worker('/assets/workers/constrainGeneratedFeatures.js');
+                    constrainWorker.onerror = function(e) {
+                        console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
+                        $("#loadingGIF").hide();
+                        humane.log("There was a error in processing, please try again.. ", {
+                            addnCls: 'humane-flatty-error'
+                        });
+                    };
+                    // console.log(selectedsystems);
+                    constrainWorker.postMessage({
+                        'allFeaturesList': JSON.stringify(final3DGeoms),
+                        'selectedsystems': JSON.stringify(selectedsystems),
+                        'showstreets': showStreets
+                    });
+                    constrainWorker.addEventListener('message', function(e) {
+                        if (e.data.mode === 'status') {
+                            updateWorkerStatus(e.data.percentcomplete);
+                        } else {
+                            updateGLData(JSON.parse(e.data.polygons), true);
+                        }
+                    }, false);
+
+                });
+            }
+        }
         $("#loadingGIF").hide();
         var generatedData;
         var apitoken = "<%= apitoken  %>"; //var test is now assigned to getTest which will only work on browsers
@@ -507,88 +469,21 @@
         var cteamid = "<%= cteamid %>"; //var test is now assigned to getTest which will only work on browsers  
         var systems = <%- systems %>; //var test is now assigned to getTest which will only work on browsers  
         var gjresults = <%- result %>;
-        var roads = <%- roads %>;
-        var inputGJ;
+        
+        var center = "<%= center %>";
+        
+        // var inputGJ;
+        processGeoms();
+
         (function() {
-            if ((apitoken !== "0" && projectid !== "0" && diagramid !== "0")) {
-                // it is synthesis. 
-                if (gjresults.features.length > 0) {
-                    inputGJ = JSON.stringify(gjresults);
-                    // $("#gjTA").text(JSON.stringify(gjresults));
-                    submitGJ();
-                }
-            } else if (apitoken !== "0" && projectid !== "0" && cteamid !== "0" && synthesisid !== "0") {
-
-                if (gjresults.features.length > 0) {
-                    // $("#gjTA").text(JSON.stringify(gjresults));
-
-                    inputGJ = JSON.stringify(gjresults);
-                    generateSystemCB(systems);
-                    $('#systemsCBCont').show();
-                    submitGJ();
-                    $("#showStreetsCB").click(function() {
-                        var showstreets = ($(this).is(":checked")) ? 1 : 0;
-
-                        var selectedsystems = [];
-                        $('#systemsCB input:checked').each(function() {
-                            selectedsystems.push($(this).attr('id'));
-                        });
-                        $("#loadingGIF").show();
-                        var constrainWorker = new Worker('/assets/workers/constrainGeneratedFeatures.js');
-                        constrainWorker.onerror = function(e) {
-                            console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
-                            $("#loadingGIF").hide();
-                            humane.log("There was a error in processing, please try again.. ", {
-                                addnCls: 'humane-flatty-error'
-                            });
-                        };
-                        // console.log(selectedsystems);
-                        constrainWorker.postMessage({
-                            'allFeaturesList': generatedData,
-                            'selectedsystems': JSON.stringify(selectedsystems),
-                            'showstreets': showstreets
-                        });
-                        constrainWorker.addEventListener('message', function(e) {
-                            if (e.data.mode === 'status') {
-                                updateWorkerStatus(e.data.percentcomplete);
-                            } else {
-                                updateGLData(JSON.parse(e.data.polygons), true);
-                            }
-                        }, false);
-                    });
-                    $('#systemsCB').click(function() {
-                        var selectedsystems = [];
-                        $('#systemsCB input:checked').each(function() {
-                            selectedsystems.push($(this).attr('id'));
-                        });
-                        var showStreets = ($('#showStreetsCB').is(":checked")) ? 1 : 0;
-                        $("#loadingGIF").show();
-                        var constrainWorker = new Worker('/assets/workers/constrainGeneratedFeatures.js');
-                        constrainWorker.onerror = function(e) {
-                            console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
-                            $("#loadingGIF").hide();
-                            humane.log("There was a error in processing, please try again.. ", {
-                                addnCls: 'humane-flatty-error'
-                            });
-                        };
-                        // console.log(selectedsystems);
-                        constrainWorker.postMessage({
-                            'allFeaturesList': generatedData,
-                            'selectedsystems': JSON.stringify(selectedsystems),
-                            'showstreets': showStreets
-                        });
-                        constrainWorker.addEventListener('message', function(e) {
-                            if (e.data.mode === 'status') {
-
-                                updateWorkerStatus(e.data.percentcomplete);
-                            } else {
-                                updateGLData(JSON.parse(e.data.polygons), true);
-                            }
-                        }, false);
-
-                    });
+            if (apitoken !== "0" && projectid !== "0" && cteamid !== "0" && synthesisid !== "0") {
+                if (center !== "0") {
+                    processGeoms();
+                } else {
+                    $("#loadingGIF").show();
                 }
             }
+
         })();
         (function(console) {
             console.save = function(data, filename) {
