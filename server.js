@@ -117,7 +117,8 @@
             var synprojectsurl = baseurl + projectid + '/cteams/' + cteamid + '/' + synthesisid + '/';
             var systemsurl = baseurl + projectid + '/systems/';
             var centerurl = baseurl + projectid + '/center/';
-            var URLS = [synprojectsurl, centerurl, systemsurl];
+            var boundsurl = baseurl + projectid + '/bounds/';
+            var URLS = [synprojectsurl, centerurl, systemsurl, boundsurl];
             async.map(URLS, function(url, done) {
                 req({
                     url: url,
@@ -137,9 +138,10 @@
                 var gj = JSON.stringify(results[0]);
                 var center = results[1];
                 var sys = JSON.stringify(results[2]);
-
+                var bounds = results[3];
                 opts['result'] = gj;
                 opts['systems'] = sys;
+                opts['bounds'] = bounds["bounds"];
                 opts['center'] = JSON.stringify(center['center']);
                 response.render('index', opts);
 
