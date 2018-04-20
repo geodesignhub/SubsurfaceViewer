@@ -106,8 +106,8 @@
                 'diagramid': '0'
             };
 
-            var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-            // var baseurl = 'http://local.dev:8000/api/v1/projects/';
+            // var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
+            var baseurl = 'http://local.dev:8000/api/v1/projects/';
 
             var apikey = request.query.apitoken;
             var cred = "Token " + apikey;
@@ -116,8 +116,8 @@
             var synthesisid = request.query.synthesisid;
             var synprojectsurl = baseurl + projectid + '/cteams/' + cteamid + '/' + synthesisid + '/';
             var systemsurl = baseurl + projectid + '/systems/';
-            var boundsurl = baseurl + projectid + '/bounds/';
-            var URLS = [synprojectsurl, boundsurl, systemsurl];
+            var centerurl = baseurl + projectid + '/center/';
+            var URLS = [synprojectsurl, centerurl, systemsurl];
             async.map(URLS, function(url, done) {
                 req({
                     url: url,
@@ -135,9 +135,12 @@
 
                 if (err) return response.sendStatus(500);
                 var gj = JSON.stringify(results[0]);
-                var bounds = results[1];
+                var center = results[1];
                 var sys = JSON.stringify(results[2]);
 
+                opts['result'] = gj;
+                opts['systems'] = sys;
+                opts['center'] = JSON.stringify(center['center']);
                 response.render('index', opts);
 
             });
@@ -151,7 +154,7 @@
                 'cteamid': '0',
                 'systems': '0',
                 'synthesisid': '0',
-                'roads': '0'
+                'center': '0',
             };
             response.render('index', opts);
         }

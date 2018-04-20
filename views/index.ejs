@@ -33,7 +33,7 @@
     <script type="text/javascript" src="/assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/geojsonlint/geojsonlint.js"></script>
     <script type="text/javascript" src="/assets/js/humane/humane.min.js"></script>
-    
+
     <script src="/assets/Build/Cesium/Cesium.js"></script>
     <style>
         @import url(/assets/Build/Cesium/Widgets/widgets.css);
@@ -74,19 +74,18 @@
             <div class="col-sm-3 col-md-3 main">
 
                 <h1 class="page-header">Geodesignhub Subsurface Viewer</h1>
-                <small>&copy; 2018 <a href="https://www.geodesignhub.com/">Geodesign Hub</a>, see the <a href="https://geodesignhub.github.io/Globe3DViewer">GitHub repository</a> for more information.</small>
+                <small>&copy; 2018 <a href="https://www.geodesignhub.com/">Geodesign Hub</a>, see the <a href="https://geodesignhub.github.io/SubsurfaceViewer">GitHub repository</a> for more information.</small>
                 <section class="information">
-                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span id="procstatus">Processing</span>...<br><small>It may take some time for the server to process all geometries for the first time, the scene will refresh once the processing is complete.</small></div>
+                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</div>
                     <br>
                     <div id="systemsCBCont" style="display:none">
                         <h4>Systems</h4>
                         <table class="table" id="systemsCB"></table>
                     </div>
                     <br>
-                    <h4>Streets</h4>
-                    <input id="showStreetsCB" class="checkbox-custom" name="checkbox-1" type="checkbox" checked> Display generated streets<br><br>
 
-                   
+
+
                     <div id="toolbar">
                         <h4>Basemap</h4>
                         <table>
@@ -295,9 +294,6 @@
             }
         }
 
-
-    
-
         function updateWorkerStatus(percentcomplete) {
             var pc = percentcomplete.toString() + '% processing completed';
             $("#procstatus").html(pc);
@@ -309,8 +305,9 @@
             // document.getElementById("ccontrols").style.visibility = "visible";
             // set new center
             latlng = latlng.split(',');
-            var lat = latlng[0];
-            var lng = latlng[1];
+            var lng = latlng[0];
+            var lat = latlng[1];
+
             cameralat = lat;
             cameralng = lng;
 
@@ -363,6 +360,7 @@
 
         function updateGLData(gjsonData, isFiltered) {
 
+
             humane.log("Rendering Scene..", {
                 addnCls: 'humane-flatty-success'
             });
@@ -384,7 +382,7 @@
                     var curFeat = entities[i];
                     // var projectorpolicy = curFeat['properties']['areatype'];
                     var curProps = curFeat.properties.getValue();
-                    var rgb = hexToRgb(curProps.roofColor);
+                    var rgb = hexToRgb(curProps.color);
                     var color;
                     if (curProps.isBuilding == 0) {
                         color = Cesium.Color.fromBytes(rgb.r, rgb.g, rgb.b, 100);
@@ -394,7 +392,19 @@
                     // curFeat.polygon.perPositionHeight = true;
                     curFeat.polygon.material = color;
                     curFeat.polygon.outline = false;
-                    curFeat.polygon.extrudedHeight = curProps.height;
+                    if (curFeat.polygon.height || curFeat.polygon.height !== 0) {
+                        var h = curFeat.polygon.height;
+                        if (h == 'ag') {
+                            h = -20;
+                        } else if (h == 'ug') {
+                            hg = -20;
+                        } else if (h == 'og') {
+                            hg = 0;
+                        } else {
+                            h = -30;
+                        }
+                    }
+                    curFeat.polygon.extrudedHeight = h;
                 }
             }).otherwise(function(error) {
                 //Display any errrors encountered while loading.
@@ -404,14 +414,10 @@
         }
     </script>
     <script>
-
         function processGeoms() {
-
-
             setMapCenter(center);
             $("#loadingGIF").hide();
-            
-            if (final3DGeoms.features.length > 0) {
+            if (gjresults.features.length > 0) {
                 // $("#gjTA").text(JSON.stringify(gjresults));
 
                 // inputGJ = JSON.stringify(gjresults);
@@ -420,20 +426,12 @@
                 // updateGLData(final3DGeoms, true);
                 $('#systemsCBCont').show();
                 // submitGJ();
-                $("#showStreetsCB").click(function() {
-                    var showstreets = ($(this).is(":checked")) ? 1 : 0;
-                    var selectedsystems = [];
-                    $('#systemsCB input:checked').each(function() {
-                        selectedsystems.push($(this).attr('id'));
-                    });
-                    
-                });
                 $('#systemsCB').click(function() {
                     var selectedsystems = [];
                     $('#systemsCB input:checked').each(function() {
                         selectedsystems.push($(this).attr('id'));
                     });
-                    var showStreets = ($('#showStreetsCB').is(":checked")) ? 1 : 0;
+
                     $("#loadingGIF").show();
                     var constrainWorker = new Worker('/assets/workers/constrainGeneratedFeatures.js');
                     constrainWorker.onerror = function(e) {
@@ -445,9 +443,9 @@
                     };
                     // console.log(selectedsystems);
                     constrainWorker.postMessage({
-                        'allFeaturesList': JSON.stringify(final3DGeoms),
+                        'allFeaturesList': JSON.stringify(gjresults),
                         'selectedsystems': JSON.stringify(selectedsystems),
-                        'showstreets': showStreets
+
                     });
                     constrainWorker.addEventListener('message', function(e) {
                         if (e.data.mode === 'status') {
@@ -469,16 +467,13 @@
         var cteamid = "<%= cteamid %>"; //var test is now assigned to getTest which will only work on browsers  
         var systems = <%- systems %>; //var test is now assigned to getTest which will only work on browsers  
         var gjresults = <%- result %>;
-        
-        var center = "<%= center %>";
-        
-        // var inputGJ;
-        processGeoms();
+        var center = <%- center %>;
 
         (function() {
             if (apitoken !== "0" && projectid !== "0" && cteamid !== "0" && synthesisid !== "0") {
                 if (center !== "0") {
                     processGeoms();
+                    updateGLData(gjresults, false);
                 } else {
                     $("#loadingGIF").show();
                 }

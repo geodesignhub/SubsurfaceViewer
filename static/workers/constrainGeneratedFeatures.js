@@ -1,4 +1,4 @@
-function constrainFeatures(allFeaturesList, selectedsystems, showstreets) {
+function constrainFeatures(allFeaturesList, selectedsystems) {
     // constrain output ot only features in the list. 
     var constraintedFeatures = { "type": "FeatureCollection", "features": [] };
     var allFeatures = JSON.parse(allFeaturesList);
@@ -11,12 +11,8 @@ function constrainFeatures(allFeaturesList, selectedsystems, showstreets) {
         var curfeatprop = af[d].properties;
         var curFeatSys = curfeatprop.sysname;
         var isStreet = curfeatprop.isStreet;
-        if (isStreet && JSON.parse(showstreets)) {
+        if (selectedsystems.indexOf(curFeatSys) > -1) {
             constraintedFeatures.features.push(af[d]);
-        } else {
-            if (selectedsystems.indexOf(curFeatSys) > -1) {
-                constraintedFeatures.features.push(af[d]);
-            }
         }
         counter += 1;
         self.postMessage({
@@ -31,5 +27,5 @@ function constrainFeatures(allFeaturesList, selectedsystems, showstreets) {
 }
 
 self.onmessage = function(e) {
-    constrainFeatures(e.data.allFeaturesList, e.data.selectedsystems, e.data.showstreets);
+    constrainFeatures(e.data.allFeaturesList, e.data.selectedsystems);
 }
