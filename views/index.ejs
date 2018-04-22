@@ -184,6 +184,7 @@
             "navigationHelpButton": false,
 
         });
+
         var imageryLayers = viewer.imageryLayers;
 
 
@@ -238,7 +239,8 @@
                 'Bing Maps Road',
                 new Cesium.BingMapsImageryProvider({
                     url: 'https://dev.virtualearth.net',
-                    mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS
+                    mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS,
+                    key: 'Am2dMceshjeLX_Sogy2NHjJ8_yMBVWAm3b2x4LdV0hbAQZiFlkkD_FyoJEyApRm5'
                 }));
             addBaseLayerOption(
                 'Mapbox Streets',
@@ -257,7 +259,7 @@
                 'Tile Coordinates',
                 new Cesium.TileCoordinatesImageryProvider(), 1.0, false);
         }
-        Cesium.BingMapsApi.defaultKey = 'Am2dMceshjeLX_Sogy2NHjJ8_yMBVWAm3b2x4LdV0hbAQZiFlkkD_FyoJEyApRm5';
+
 
         function addBaseLayerOption(name, imageryProvider) {
             var layer;
