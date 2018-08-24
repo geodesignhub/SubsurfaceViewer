@@ -8,7 +8,6 @@
     display: inline-block;
 }
 
-.c-331196-policy,
 .c-E54C00-policy,
 .c-FFAA00-policy,
 .c-E69800-policy,
@@ -37,7 +36,46 @@
 .c-9cec5b-policy,
 .c-50c5b7-policy,
 .c-e76f51-policy,
-.c-8d99ae-policy {
+.c-8d99ae-policy,
+.c-6fdb6f-policy,
+.c-d0f4d0-policy,
+.c-71b8ff-policy,
+.c-afd7ff-policy,
+.c-808080-policy,
+.c-b2b2b2-policy,
+.c-598600-policy,
+.c-006600-policy,
+.c-6600cc-policy,
+.c-9966ff-policy,
+.c-ff0000-policy,
+.c-ff8989-policy,
+.c-996633-policy,
+.c-cc9900-policy,
+.c-ffcc00-policy,
+.c-fff1b7-policy,
+.c-24496e-policy,
+.c-3b77b3-policy,
+.c-dddddd-policy,
+.c-f2f2f2-policy,
+.c-739b32-policy,
+.c-e1b671-policy,
+.c-006666-policy,
+.c-00a6a2-policy,
+.c-de2d26-policy,
+.c-fc9272-policy,
+.c-843c0c-policy,
+.c-da801c-policy,
+.c-ffe699-policy,
+.c-742d9f-policy,
+.c-af6fd7-policy,
+.c-0d0d0d-policy,
+.c-c2e699-policy,
+.c-78c679-policy,
+.c-31a354-policy,
+.c-006837-policy,
+.c-e168c8-policy,
+.c-404040-policy, 
+.c-CD329B-policy {
     color: black;
     background-size: 5px 5px;
     background-position: 2px 2px;
@@ -47,7 +85,8 @@
     /*background-repeat: repeat-x*/
 }
 
-.c-331196-policy span,
+
+
 .c-E54C00-policy span,
 .c-FFAA00-policy span,
 .c-E69800-policy span,
@@ -76,192 +115,726 @@
 .c-9cec5b-policy span,
 .c-50c5b7-policy span,
 .c-e76f51-policy span,
-.c-8d99ae-policy span {
+.c-8d99ae-policy span,
+.c-6fdb6f-policy span,
+.c-d0f4d0-policy span,
+.c-71b8ff-policy span,
+.c-afd7ff-policy span,
+.c-808080-policy span,
+.c-b2b2b2-policy span,
+.c-598600-policy span,
+.c-006600-policy span,
+.c-6600cc-policy span,
+.c-9966ff-policy span,
+.c-ff0000-policy span,
+.c-ff8989-policy span,
+.c-996633-policy span,
+.c-cc9900-policy span,
+.c-ffcc00-policy span,
+.c-fff1b7-policy span,
+.c-24496e-policy span,
+.c-3b77b3-policy span,
+.c-dddddd-policy span,
+.c-f2f2f2-policy span,
+.c-739b32-policy span,
+.c-e1b671-policy span,
+.c-006666-policy span,
+.c-00a6a2-policy span,
+.c-de2d26-policy span,
+.c-fc9272-policy span,
+.c-843c0c-policy span,
+.c-da801c-policy span,
+.c-ffe699-policy span,
+.c-742d9f-policy span,
+.c-af6fd7-policy span,
+.c-0d0d0d-policy span,
+.c-c2e699-policy span,
+.c-78c679-policy span,
+.c-31a354-policy span,
+.c-006837-policy span,
+.c-e168c8-policy span,
+.c-404040-policy span,
+.c-CD329B-policy span {
     background: #FFFFFF;
 }
 
-.c-331196 {
-    background-color: #331196;
-    color: #FFFFFF;
-}
+
 
 .c-E54C00 {
     background-color: #E54C00;
     color: #FFFFFF;
 }
 
+
 .c-FFAA00 {
     background-color: #FFAA00;
     color: #FFFFFF;
 }
+
 
 .c-E69800 {
     background-color: #E69800;
     color: #FFFFFF;
 }
 
+
 .c-E7E600 {
     background-color: #E7E600;
     color: #FFFFFF;
 }
+
 
 .c-014B73 {
     background-color: #014B73;
     color: #FFFFFF;
 }
 
+,
 .c-0086A7 {
     background-color: #0086A7;
     color: #FFFFFF;
 }
 
+,
 .c-704425 {
     background-color: #704425;
     color: #FFFFFF;
 }
+
 
 .c-71A701 {
     background-color: #71A701;
     color: #FFFFFF;
 }
 
+
 .c-9ae32c {
     background-color: #9ae32c;
     color: #FFFFFF;
 }
 
+
 .c-f4a261 {
     background-color: #f4a261;
     color: #FFFFFF;
 }
+
+
+.c-fffd38 {
+    background-color: #fffd38;
+    color: #FFFFFF;
+}
+
 
 .c-fc6621 {
     background-color: #fc6621;
     color: #FFFFFF;
 }
 
+
 .c-da0a16 {
     background-color: #da0a16;
     color: #FFFFFF;
 }
+
 
 .c-fc1999 {
     background-color: #fc1999;
     color: #FFFFFF;
 }
 
+
 .c-331196 {
     background-color: #331196;
     color: #FFFFFF;
 }
+
 
 .c-071ac8 {
     background-color: #071ac8;
     color: #FFFFFF;
 }
 
+
 .c-1a9bfc {
     background-color: #1a9bfc;
     color: #FFFFFF;
 }
+
 
 .c-18a81b {
     background-color: #18a81b;
     color: #FFFFFF;
 }
 
+
 .c-0a650c {
     background-color: #0a650c;
     color: #FFFFFF;
 }
+
 
 .c-653308 {
     background-color: #653308;
     color: #FFFFFF;
 }
 
+
 .c-986638 {
     background-color: #986638;
     color: #FFFFFF;
 }
 
+
 .c-bbbbbb {
-    background-color: #bbb;
+    background-color: #bbbbbb;
     color: #FFFFFF;
 }
+
 
 .c-888888 {
-    background-color: #888;
+    background-color: #888888;
     color: #FFFFFF;
 }
+
 
 .c-444444 {
-    background-color: #444;
+    background-color: #444444;
     color: #FFFFFF;
 }
+
 
 .c-000000 {
-    background-color: #000;
+    background-color: #000000;
     color: #FFFFFF;
 }
 
-.c-f4a261 {
-    background-color: #f4a261;
-    color: #FFFFFF;
-}
 
 .c-9cec5b {
     background-color: #9cec5b;
     color: #FFFFFF;
 }
 
+
 .c-50c5b7 {
     background-color: #50c5b7;
     color: #FFFFFF;
 }
+
 
 .c-e76f51 {
     background-color: #e76f51;
     color: #FFFFFF;
 }
 
+
 .c-8d99ae {
     background-color: #8d99ae;
     color: #FFFFFF;
 }
 
-.c-331196-policy,
-.c-E54C00-policy,
-.c-FFAA00-policy,
-.c-E69800-policy,
-.c-E7E600-policy,
-.c-014B73-policy,
-.c-0086A7-policy,
-.c-704425-policy,
-.c-71A701-policy,
-.c-9ae32c-policy,
-.c-fffd38-policy,
-.c-fc6621-policy,
-.c-da0a16-policy,
-.c-fc1999-policy,
-.c-f4a261-policy,
-.c-331196-policy,
-.c-071ac8-policy,
-.c-1a9bfc-policy,
-.c-18a81b-policy,
-.c-0a650c-policy,
-.c-653308-policy,
-.c-986638-policy,
-.c-bbbbbb-policy,
-.c-888888-policy,
-.c-444444-policy,
-.c-000000-policy,
-.c-9cec5b-policy,
-.c-50c5b7-policy,
-.c-e76f51-policy,
+
+.c-6fdb6f {
+    background-color: #6fdb6f;
+    color: #FFFFFF;
+}
+
+
+.c-d0f4d0 {
+    background-color: #d0f4d0;
+    color: #FFFFFF;
+}
+
+
+.c-71b8ff {
+    background-color: #71b8ff;
+    color: #FFFFFF;
+}
+
+
+.c-afd7ff {
+    background-color: #afd7ff;
+    color: #FFFFFF;
+}
+
+
+.c-808080 {
+    background-color: #808080;
+    color: #FFFFFF;
+}
+
+
+.c-b2b2b2 {
+    background-color: #b2b2b2;
+    color: #FFFFFF;
+}
+
+
+.c-598600 {
+    background-color: #598600;
+    color: #FFFFFF;
+}
+
+
+.c-006600 {
+    background-color: #006600;
+    color: #FFFFFF;
+}
+
+
+.c-6600cc {
+    background-color: #6600cc;
+    color: #FFFFFF;
+}
+
+
+.c-9966ff {
+    background-color: #9966ff;
+    color: #FFFFFF;
+}
+
+,
+.c-ff0000 {
+    background-color: #ff0000;
+    color: #FFFFFF;
+}
+
+,
+.c-ff8989 {
+    background-color: #ff8989;
+    color: #FFFFFF;
+}
+
+
+.c-996633 {
+    background-color: #996633;
+    color: #FFFFFF;
+}
+
+
+.c-cc9900 {
+    background-color: #cc9900;
+    color: #FFFFFF;
+}
+
+
+.c-ffcc00 {
+    background-color: #ffcc00;
+    color: #FFFFFF;
+}
+
+
+.c-fff1b7 {
+    background-color: #fff1b7;
+    color: #FFFFFF;
+}
+
+
+.c-24496e {
+    background-color: #24496e;
+    color: #FFFFFF;
+}
+
+
+.c-3b77b3 {
+    background-color: #3b77b3;
+    color: #FFFFFF;
+}
+
+
+.c-dddddd {
+    background-color: #dddddd;
+    color: #FFFFFF;
+}
+
+
+.c-f2f2f2 {
+    background-color: #f2f2f2;
+    color: #FFFFFF;
+}
+
+
+.c-739b32 {
+    background-color: #739b32;
+    color: #FFFFFF;
+}
+
+
+.c-e1b671 {
+    background-color: #e1b671;
+    color: #FFFFFF;
+}
+
+
+.c-006666 {
+    background-color: #006666;
+    color: #FFFFFF;
+}
+
+
+.c-00a6a2 {
+    background-color: #00a6a2;
+    color: #FFFFFF;
+}
+
+
+.c-de2d26 {
+    background-color: #de2d26;
+    color: #FFFFFF;
+}
+
+
+.c-fc9272 {
+    background-color: #fc9272;
+    color: #FFFFFF;
+}
+
+
+.c-843c0c {
+    background-color: #843c0c;
+    color: #FFFFFF;
+}
+
+
+.c-da801c {
+    background-color: #da801c;
+    color: #FFFFFF;
+}
+
+
+.c-ffe699 {
+    background-color: #ffe699;
+    color: #FFFFFF;
+}
+
+
+.c-742d9f {
+    background-color: #742d9f;
+    color: #FFFFFF;
+}
+
+
+.c-af6fd7 {
+    background-color: #af6fd7;
+    color: #FFFFFF;
+}
+
+
+.c-0d0d0d {
+    background-color: #0d0d0d;
+    color: #FFFFFF;
+}
+
+
+.c-c2e699 {
+    background-color: #c2e699;
+    color: #FFFFFF;
+}
+
+
+.c-78c679 {
+    background-color: #78c679;
+    color: #FFFFFF;
+}
+
+
+.c-31a354 {
+    background-color: #31a354;
+    color: #FFFFFF;
+}
+
+
+.c-006837 {
+    background-color: #006837;
+    color: #FFFFFF;
+}
+
+
+.c-e168c8 {
+    background-color: #e168c8;
+    color: #FFFFFF;
+}
+
+
+.c-404040 {
+    background-color: #404040;
+    color: #FFFFFF;
+}
+
+.c-CD329B {
+    background-color: #CD329B;
+    color: #FFFFFF;
+}
+
+.c-E54C00-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #E54C00 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #E54C00 50%, transparent 55%, transparent 100%);
+}
+
+.c-FFAA00-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #FFAA00 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #FFAA00 50%, transparent 55%, transparent 100%);
+}
+
+.c-E69800-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #E69800 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #E69800 50%, transparent 55%, transparent 100%);
+}
+
+.c-E7E600-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #E7E600 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #E7E600 50%, transparent 55%, transparent 100%);
+}
+
+.c-014B73-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #014B73 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #014B73 50%, transparent 55%, transparent 100%);
+}
+
+.c-0086A7-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #0086A7 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #0086A7 50%, transparent 55%, transparent 100%);
+}
+
+.c-704425-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #704425 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #704425 50%, transparent 55%, transparent 100%);
+}
+
+.c-71A701-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #71A701 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #71A701 50%, transparent 55%, transparent 100%);
+}
+
+.c-9ae32c-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #9ae32c 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #9ae32c 50%, transparent 55%, transparent 100%);
+}
+
+.c-f4a261-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #f4a261 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #f4a261 50%, transparent 55%, transparent 100%);
+}
+
+.c-fffd38-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #fffd38 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #fffd38 50%, transparent 55%, transparent 100%);
+}
+
+.c-fc6621-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #fc6621 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #fc6621 50%, transparent 55%, transparent 100%);
+}
+
+.c-da0a16-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #da0a16 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #da0a16 50%, transparent 55%, transparent 100%);
+}
+
+.c-fc1999-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #fc1999 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #fc1999 50%, transparent 55%, transparent 100%);
+}
+
+.c-331196-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #331196 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #331196 50%, transparent 55%, transparent 100%);
+}
+
+.c-071ac8-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #071ac8 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #071ac8 50%, transparent 55%, transparent 100%);
+}
+
+.c-1a9bfc-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #1a9bfc 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #1a9bfc 50%, transparent 55%, transparent 100%);
+}
+
+.c-18a81b-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #18a81b 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #18a81b 50%, transparent 55%, transparent 100%);
+}
+
+.c-0a650c-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #0a650c 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #0a650c 50%, transparent 55%, transparent 100%);
+}
+
+.c-653308-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #653308 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #653308 50%, transparent 55%, transparent 100%);
+}
+
+.c-986638-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #986638 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #986638 50%, transparent 55%, transparent 100%);
+}
+
+.c-bbbbbb-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #bbbbbb 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #bbbbbb 50%, transparent 55%, transparent 100%);
+}
+
+.c-888888-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #888888 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #888888 50%, transparent 55%, transparent 100%);
+}
+
+.c-444444-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #444444 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #444444 50%, transparent 55%, transparent 100%);
+}
+
+.c-000000-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #000000 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #000000 50%, transparent 55%, transparent 100%);
+}
+
+.c-9cec5b-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #9cec5b 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #9cec5b 50%, transparent 55%, transparent 100%);
+}
+
+.c-50c5b7-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #50c5b7 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #50c5b7 50%, transparent 55%, transparent 100%);
+}
+
+.c-e76f51-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #e76f51 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #e76f51 50%, transparent 55%, transparent 100%);
+}
+
 .c-8d99ae-policy {
-    /*background-color: #8d99ae;*/
     background-image: linear-gradient(45deg, transparent 45%, #8d99ae 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #8d99ae 50%, transparent 55%, transparent 100%);
+}
+
+.c-6fdb6f-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #6fdb6f 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #6fdb6f 50%, transparent 55%, transparent 100%);
+}
+
+.c-d0f4d0-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #d0f4d0 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #d0f4d0 50%, transparent 55%, transparent 100%);
+}
+
+.c-71b8ff-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #71b8ff 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #71b8ff 50%, transparent 55%, transparent 100%);
+}
+
+.c-afd7ff-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #afd7ff 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #afd7ff 50%, transparent 55%, transparent 100%);
+}
+
+.c-808080-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #808080 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #808080 50%, transparent 55%, transparent 100%);
+}
+
+.c-b2b2b2-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #b2b2b2 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #b2b2b2 50%, transparent 55%, transparent 100%);
+}
+
+.c-598600-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #598600 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #598600 50%, transparent 55%, transparent 100%);
+}
+
+.c-006600-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #006600 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #006600 50%, transparent 55%, transparent 100%);
+}
+
+.c-6600cc-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #6600cc 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #6600cc 50%, transparent 55%, transparent 100%);
+}
+
+.c-9966ff-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #9966ff 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #9966ff 50%, transparent 55%, transparent 100%);
+}
+
+.c-ff0000-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ff0000 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ff0000 50%, transparent 55%, transparent 100%);
+}
+
+.c-ff8989-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ff8989 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ff8989 50%, transparent 55%, transparent 100%);
+}
+
+.c-996633-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #996633 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #996633 50%, transparent 55%, transparent 100%);
+}
+
+.c-cc9900-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #cc9900 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #cc9900 50%, transparent 55%, transparent 100%);
+}
+
+.c-ffcc00-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ffcc00 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ffcc00 50%, transparent 55%, transparent 100%);
+}
+
+.c-fff1b7-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #fff1b7 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #fff1b7 50%, transparent 55%, transparent 100%);
+}
+
+.c-24496e-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #24496e 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #24496e 50%, transparent 55%, transparent 100%);
+}
+
+.c-3b77b3-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #3b77b3 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #3b77b3 50%, transparent 55%, transparent 100%);
+}
+
+.c-dddddd-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #dddddd 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #dddddd 50%, transparent 55%, transparent 100%);
+}
+
+.c-f2f2f2-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #f2f2f2 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #f2f2f2 50%, transparent 55%, transparent 100%);
+}
+
+.c-739b32-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #739b32 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #739b32 50%, transparent 55%, transparent 100%);
+}
+
+.c-e1b671-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #e1b671 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #e1b671 50%, transparent 55%, transparent 100%);
+}
+
+.c-006666-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #006666 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #006666 50%, transparent 55%, transparent 100%);
+}
+
+.c-00a6a2-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #00a6a2 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #00a6a2 50%, transparent 55%, transparent 100%);
+}
+
+.c-de2d26-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #de2d26 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #de2d26 50%, transparent 55%, transparent 100%);
+}
+
+.c-fc9272-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #fc9272 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #fc9272 50%, transparent 55%, transparent 100%);
+}
+
+.c-843c0c-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #843c0c 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #843c0c 50%, transparent 55%, transparent 100%);
+}
+
+.c-da801c-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #da801c 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #da801c 50%, transparent 55%, transparent 100%);
+}
+
+.c-ffe699-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ffe699 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ffe699 50%, transparent 55%, transparent 100%);
+}
+
+.c-742d9f-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #742d9f 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #742d9f 50%, transparent 55%, transparent 100%);
+}
+
+.c-af6fd7-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #af6fd7 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #af6fd7 50%, transparent 55%, transparent 100%);
+}
+
+.c-0d0d0d-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #0d0d0d 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #0d0d0d 50%, transparent 55%, transparent 100%);
+}
+
+.c-c2e699-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #c2e699 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #c2e699 50%, transparent 55%, transparent 100%);
+}
+
+.c-78c679-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #78c679 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #78c679 50%, transparent 55%, transparent 100%);
+}
+
+.c-31a354-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #31a354 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #31a354 50%, transparent 55%, transparent 100%);
+}
+
+.c-006837-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #006837 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #006837 50%, transparent 55%, transparent 100%);
+}
+
+.c-e168c8-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #e168c8 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #e168c8 50%, transparent 55%, transparent 100%);
+}
+
+.c-404040-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #404040 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #404040 50%, transparent 55%, transparent 100%);
+}
+.c-CD329B-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #CD329B 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #CD329B 50%, transparent 55%, transparent 100%);
 }
 
 @media (min-width: 768px) {
