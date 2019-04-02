@@ -105,7 +105,7 @@
                 'cteamid': request.query.cteamid,
                 'diagramid': '0'
             };
-            console.log(opts)
+            
 
             // var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
             var baseurl = 'http://local.test:8000/api/v1/projects/';
