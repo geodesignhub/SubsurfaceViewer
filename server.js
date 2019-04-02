@@ -105,9 +105,10 @@
                 'cteamid': request.query.cteamid,
                 'diagramid': '0'
             };
+            console.log(opts)
 
             // var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
-            var baseurl = 'http://local.dev:8000/api/v1/projects/';
+            var baseurl = 'http://local.test:8000/api/v1/projects/';
 
             var apikey = request.query.apitoken;
             var cred = "Token " + apikey;
@@ -119,6 +120,7 @@
             var centerurl = baseurl + projectid + '/center/';
             var boundsurl = baseurl + projectid + '/bounds/';
             var URLS = [synprojectsurl, centerurl, systemsurl, boundsurl];
+            
             async.map(URLS, function(url, done) {
                 req({
                     url: url,
@@ -172,7 +174,7 @@
     //     }
     // });
 
-    var server = app.listen(process.env.PORT || 5000); // for Heroku
+    var server = app.listen(process.env.PORT || 5001); // for Heroku
     server.on('error', function(e) {
         if (e.code === 'EADDRINUSE') {
             console.log('Error: Port %d is already in use, select a different port.', argv.port);

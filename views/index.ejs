@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Geodesign Hub Globe 3D Viewer</title>
+    <title>Geodesignhub Subsurface Viewer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -37,6 +37,7 @@
     <script src="/assets/Build/Cesium/Cesium.js"></script>
     <style>
         @import url(/assets/Build/Cesium/Widgets/widgets.css);
+
         #toolbar {
             position: absolute;
             top: 5px;
@@ -44,48 +45,50 @@
             background: rgba(42, 42, 42, 0.8);
             padding: 2px 2px;
             border-radius: 2px;
+            color: #9370DB;
         }
-        
+
         #controlPanel span {
             color: white;
         }
-        
+
         #controlPanel p {
             margin: 0;
         }
-        
+
         .densitydetails {
             border-bottom: 1px solid #e0e0e0;
         }
-        
+
         .systitle {
             border-bottom: 1px solid #e0e0e0;
             font-size: 16px;
             padding-bottom: 5px;
             padding-top: 5px;
         }
+
         /* #toolbar {
             background: rgba(42, 42, 42, 0.8);
             padding: 4px;
             border-radius: 4px;
         } */
-        
+
         #toolbar input {
             vertical-align: middle;
             padding-top: 2px;
             padding-bottom: 2px;
         }
-        
+
         #toolbar table tr {
             transform: translateY(0);
             transition: transform 0.4s ease-out;
         }
-        
+
         #toolbar table tr.up {
             transform: translateY(33px);
             transition: none;
         }
-        
+
         #toolbar table tr.down {
             transform: translateY(-33px);
             transition: none;
@@ -100,9 +103,12 @@
             <div class="col-sm-3 col-md-3 main">
 
                 <h1 class="page-header">Geodesignhub Subsurface Viewer</h1>
-                <small>&copy; 2018 <a href="https://www.geodesignhub.com/">Geodesign Hub</a>, see the <a href="https://geodesignhub.github.io/SubsurfaceViewer">GitHub repository</a> for more information.</small>
+                <small>&copy; 2019 <a href="https://www.geodesignhub.com/">Geodesignhub</a>, see the <a
+                        href="https://geodesignhub.github.io/SubsurfaceViewer">GitHub repository</a> for more
+                    information.</small>
                 <section class="information">
-                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span id="procstatus">Processing</span>...</div>
+                    <div id="loadingGIF"><img src="/assets/objs/loading.gif">&nbsp;<span
+                            id="procstatus">Processing</span>...</div>
                     <br>
                     <div id="systemsCBCont" style="display:none">
                         <h4>Systems</h4>
@@ -132,13 +138,19 @@
                             <td><input type="checkbox" data-bind="checked: show"></td>
                             <td>
                                 <span data-bind="text: name, visible: !$parent.isSelectableLayer($data)"></span>
-                                <select data-bind="visible: $parent.isSelectableLayer($data), options: $parent.baseLayers, optionsText: 'name', value: $parent.selectedLayer"></select>
+                                <select
+                                    data-bind="visible: $parent.isSelectableLayer($data), options: $parent.baseLayers, optionsText: 'name', value: $parent.selectedLayer"></select>
                             </td>
                             <td>
-                                <input type="range" min="0" max="1" step="0.01" data-bind="value: alpha, valueUpdate: 'input'">
+                                <input type="range" min="0" max="1" step="0.01"
+                                    data-bind="value: alpha, valueUpdate: 'input'">
                             </td>
-                            <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.raise($data, $index()); }, visible: $parent.canRaise($index())">▲</button></td>
-                            <td><button type="button" class="cesium-button" data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button></td>
+                            <td><button type="button" class="cesium-button"
+                                    data-bind="click: function() { $parent.raise($data, $index()); }, visible: $parent.canRaise($index())">▲</button>
+                            </td>
+                            <td><button type="button" class="cesium-button"
+                                    data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -194,31 +206,31 @@
             upLayer: null,
             downLayer: null,
             selectedLayer: null,
-            isSelectableLayer: function(layer) {
+            isSelectableLayer: function (layer) {
                 return this.baseLayers.indexOf(layer) >= 0;
             },
-            raise: function(layer, index) {
+            raise: function (layer, index) {
                 imageryLayers.raise(layer);
                 viewModel.upLayer = layer;
                 viewModel.downLayer = viewModel.layers[Math.max(0, index - 1)];
                 updateLayerList();
-                window.setTimeout(function() {
+                window.setTimeout(function () {
                     viewModel.upLayer = viewModel.downLayer = null;
                 }, 10);
             },
-            lower: function(layer, index) {
+            lower: function (layer, index) {
                 imageryLayers.lower(layer);
                 viewModel.upLayer = viewModel.layers[Math.min(viewModel.layers.length - 1, index + 1)];
                 viewModel.downLayer = layer;
                 updateLayerList();
-                window.setTimeout(function() {
+                window.setTimeout(function () {
                     viewModel.upLayer = viewModel.downLayer = null;
                 }, 10);
             },
-            canRaise: function(layerIndex) {
+            canRaise: function (layerIndex) {
                 return layerIndex > 0;
             },
-            canLower: function(layerIndex) {
+            canLower: function (layerIndex) {
                 return layerIndex >= 0 && layerIndex < imageryLayers.length - 1;
             }
         };
@@ -249,15 +261,15 @@
                     accessToken: 'pk.eyJ1IjoiY3lnbnVzMjkzNiIsImEiOiJjaWgzanBwY2YweTJvNHBtM2x5MjdtemxjIn0.bwFfvQYX-M2EPyK2aee8DQ'
                 }));
             addBaseLayerOption(
-                'OpenStreetMaps',
+                'OpenStreetMap',
                 Cesium.createOpenStreetMapImageryProvider());
 
             addAdditionalLayerOption(
                 'Grid',
                 new Cesium.GridImageryProvider(), 1.0, false);
-            addAdditionalLayerOption(
-                'Tile Coordinates',
-                new Cesium.TileCoordinatesImageryProvider(), 1.0, false);
+            // addAdditionalLayerOption(
+            //     'Tile Coordinates',
+            //     new Cesium.TileCoordinatesImageryProvider(), 1.0, false);
         }
 
 
@@ -297,7 +309,7 @@
         var toolbar = document.getElementById('toolbar');
         Cesium.knockout.applyBindings(viewModel, toolbar);
 
-        Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function(baseLayer) {
+        Cesium.knockout.getObservable(viewModel, 'selectedLayer').subscribe(function (baseLayer) {
             // Handle changes to the drop-down base layer selector.
             var activeLayerIndex = 0;
             var numLayers = viewModel.layers.length;
@@ -321,7 +333,11 @@
 
         function generateSystemCB(systems) {
             for (var x = 0; x < systems.length; x++) {
-                $('#systemsCB').append('<tr><td class="systitle"><input name="sysCB" id=' + "'" + systems[x].sysname + "'" + 'type="checkbox"/> <span class="square c-' + systems[x].syscolor.substring(1) + '"></span>&nbsp;&nbsp;' + systems[x].sysname + '</input>&nbsp;&nbsp;</td><td class="densitydetails"><h6 id=' + "'" + systems[x].sysname + "-units'" + '><h6></td></tr>');
+                $('#systemsCB').append('<tr><td class="systitle"><input name="sysCB" id=' + "'" + systems[x].sysname +
+                    "'" + 'type="checkbox"/> <span class="square c-' + systems[x].syscolor.substring(1) +
+                    '"></span>&nbsp;&nbsp;' + systems[x].sysname +
+                    '</input>&nbsp;&nbsp;</td><td class="densitydetails"><h6 id=' + "'" + systems[x].sysname +
+                    "-units'" + '><h6></td></tr>');
             }
         }
 
@@ -355,8 +371,8 @@
             });
         }
 
-        var randomid = function() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var randomid = function () {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0,
                     v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
@@ -369,7 +385,7 @@
 
             // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
             var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-            hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+            hex = hex.replace(shorthandRegex, function (m, r, g, b) {
                 return r + r + g + g + b + b;
             });
 
@@ -394,49 +410,97 @@
             $("#downloadLink").show();
             $("#procstatus").html("Processing..");
             // for projects
+            
             var promise = Cesium.GeoJsonDataSource.load(gjsonData);
-            promise.then(function(dataSource) {
-                viewer.dataSources.add(dataSource);
-                var allGeometryInstances = [];
-                var allpolicies = [];
-                //Get the array of entities
-                var entities = dataSource.entities.values;
-                for (var i = 0; i < entities.length; i++) {
-                    var curFeat = entities[i];
-                    // var projectorpolicy = curFeat['properties']['areatype'];
-                    var curProps = curFeat.properties.getValue();
-                    var rgb = hexToRgb(curProps.color);
-                    var color;
-                    if (curProps.isBuilding == 0) {
-                        color = Cesium.Color.fromBytes(rgb.r, rgb.g, rgb.b, 100);
-                    } else {
-                        color = Cesium.Color.fromBytes(rgb.r, rgb.g, rgb.b);
-                    }
-                    // curFeat.polygon.perPositionHeight = true;
-                    curFeat.polygon.material = color;
-                    curFeat.polygon.outline = false;
-                    if (curFeat.polygon.height || curFeat.polygon.height !== 0) {
-                        var h = curFeat.polygon.height;
-                        const heights = [90, -90, 300, -100, -20, 100];
-                        var randomValue = heights[Math.floor(heights.length * Math.random())];
-                        // if (h == 'ag') {
-                        //     h = -20;
-                        // } else if (h == 'ug') {
-                        //     hg = -20;
-                        // } else if (h == 'og') {
-                        //     hg = 0;
-                        // } else {
-                        //     h = -30;
-                        // }
-                    }
-                    console.log(randomValue)
-                    curFeat.polygon.extrudedHeight = randomValue;
+            promise.then(function (dataSource) {
+                    viewer.dataSources.add(dataSource);
+                    var allGeometryInstances = [];
+                    var allpolicies = [];
+                    //Get the array of entities
+                    var entities = dataSource.entities.values;
+                   
+                    for (var i = 0; i < entities.length; i++) {
+                        var curFeat = entities[i];
+                        var min_height = 0;
+                        var max_height = 0;
+                        var curProps = curFeat.properties.getValue();
+                        if (curProps.hasOwnProperty('min_height')){
+                            
+                         min_height = curProps.min_height;
+                        }
+                        if (curProps.hasOwnProperty('max_height')){
+                            max_height = curProps.max_height;
+                        }
+                       
+                        var rgb = hexToRgb(curProps.color);
+                        var color;
+                        if (curProps.isBuilding == 0) {
+                            color = Cesium.Color.fromBytes(rgb.r, rgb.g, rgb.b, 100);
+                        } else {
+                            color = Cesium.Color.fromBytes(rgb.r, rgb.g, rgb.b);
+                        }
+                        // curFeat.polygon.perPositionHeight = true;
+                            try {
+
+                            curFeat.polygon.material = color;
+                            curFeat.polygon.outline = true;
+                            if (max_height ==0) {
+                                var h = curFeat.polygon.height;
+                                const heights = [90, -90, 300, -100, -20, 100];                               
+                                max_height = heights[Math.floor(heights.length * Math.random())];
+                                min_height = 0;
+                                // if (h == 'ag') {
+                                //     h = -20;
+                                // } else if (h == 'ug') {
+                                //     hg = -20;
+                                // } else if (h == 'og') {
+                                //     hg = 0;
+                                // } else {
+                                //     h = -30;
+                                // }
+                            }
+                           
+                            // console.log(max_height, min_height);
+                            curFeat.polygon.height = min_height;
+                            curFeat.polygon.extrudedHeight = max_height;
+                        }
+                        catch(err){
+                            // console.log("Not polygon")
+                        }
+                       try{                           
+
+                            curFeat.polyline.material = color;
+                            curFeat.polyline.outline = true;
+                            if (max_height ===0) {
+                                var h = curFeat.polyline.height;
+                                const heights = [90, -90, 300, -100, -20, 100];
+                                max_height = heights[Math.floor(heights.length * Math.random())];
+                                min_height = 0;
+                                
+                                // if (h == 'ag') {
+                                //     h = -20;
+                                // } else if (h == 'ug') {
+                                //     hg = -20;
+                                // } else if (h == 'og') {
+                                //     hg = 0;
+                                // } else {
+                                //     h = -30;
+                                // }
+                            } 
+                            // console.log(max_height, min_height);
+                            curFeat.polyline.height = min_height;
+                            curFeat.polyline.extrudedHeight = max_height;
+                        }
+                        catch(err){
+                            // console.log("Not polyline");
+                        }                   
+
                 }
-            }).otherwise(function(error) {
-                //Display any errrors encountered while loading.
-                // window.alert(error);
-                console.log(error);
-            });;
+            }).otherwise(function (error) {
+            //Display any errrors encountered while loading.
+            // window.alert(error);
+            console.log(error);
+        });;
         }
     </script>
     <script>
@@ -451,15 +515,15 @@
                 // updateGLData(final3DGeoms, true);
                 $('#systemsCBCont').show();
                 // submitGJ();
-                $('#systemsCB').click(function() {
+                $('#systemsCB').click(function () {
                     var selectedsystems = [];
-                    $('#systemsCB input:checked').each(function() {
+                    $('#systemsCB input:checked').each(function () {
                         selectedsystems.push($(this).attr('id'));
                     });
 
                     $("#loadingGIF").show();
                     var constrainWorker = new Worker('/assets/workers/constrainGeneratedFeatures.js');
-                    constrainWorker.onerror = function(e) {
+                    constrainWorker.onerror = function (e) {
                         console.log('Error: Line ' + e.lineno + ' in ' + e.filename + ': ' + e.message);
                         $("#loadingGIF").hide();
                         humane.log("There was a error in processing, please try again.. ", {
@@ -472,7 +536,7 @@
                         'selectedsystems': JSON.stringify(selectedsystems),
 
                     });
-                    constrainWorker.addEventListener('message', function(e) {
+                    constrainWorker.addEventListener('message', function (e) {
                         if (e.data.mode === 'status') {
                             updateWorkerStatus(e.data.percentcomplete);
                         } else {
@@ -486,7 +550,7 @@
         }
         $("#loadingGIF").hide();
         var generatedData;
-        (function() {
+        (function () {
             if (apitoken !== "0" && projectid !== "0" && cteamid !== "0" && synthesisid !== "0") {
                 if (center !== "0") {
                     processGeoms();
@@ -499,8 +563,8 @@
             }
 
         })();
-        (function(console) {
-            console.save = function(data, filename) {
+        (function (console) {
+            console.save = function (data, filename) {
                 if (!data) {
                     console.error('Console.save: No data')
                     return;
@@ -517,7 +581,8 @@
                 a.download = filename
                 a.href = window.URL.createObjectURL(blob)
                 a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
-                e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+                e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0,
+                    null)
                 a.dispatchEvent(e)
             }
         })(console)
