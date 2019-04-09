@@ -120,7 +120,7 @@
             var centerurl = baseurl + projectid + '/center/';
             var boundsurl = baseurl + projectid + '/bounds/';
             var URLS = [synprojectsurl, centerurl, systemsurl, boundsurl];
-            
+           
             async.map(URLS, function(url, done) {
                 req({
                     url: url,
@@ -135,7 +135,7 @@
                     return done(null, JSON.parse(body));
                 });
             }, function(err, results) {
-
+                
                 if (err) return response.sendStatus(500);
                 var gj = JSON.stringify(results[0]);
                 var center = results[1];
@@ -145,6 +145,7 @@
                 opts['systems'] = sys;
                 opts['bounds'] = bounds["bounds"];
                 opts['center'] = JSON.stringify(center['center']);
+               
                 response.render('index', opts);
 
             });
