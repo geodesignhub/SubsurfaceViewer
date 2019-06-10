@@ -106,7 +106,6 @@
                 'diagramid': '0'
             };
             
-
             var baseurl = 'https://www.geodesignhub.com/api/v1/projects/';
             // var baseurl = 'http://local.test:8000/api/v1/projects/';
 
@@ -120,7 +119,7 @@
             var centerurl = baseurl + projectid + '/center/';
             var boundsurl = baseurl + projectid + '/bounds/';
             var URLS = [synprojectsurl, centerurl, systemsurl, boundsurl];
-           
+            
             async.map(URLS, function(url, done) {
                 req({
                     url: url,
@@ -135,7 +134,6 @@
                     return done(null, JSON.parse(body));
                 });
             }, function(err, results) {
-                
                 if (err) return response.sendStatus(500);
                 var gj = JSON.stringify(results[0]);
                 var center = results[1];
