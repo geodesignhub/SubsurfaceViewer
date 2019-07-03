@@ -10,7 +10,7 @@ function constrainFeatures(allFeaturesList, selectedsystems) {
     for (var d = 0; d < featlen; d++) {
         var curfeatprop = af[d].properties;
         var curFeatSys = curfeatprop.sysname;
-        var isStreet = curfeatprop.isStreet;
+        // var isStreet = curfeatprop.isStreet;
         if (selectedsystems.indexOf(curFeatSys) > -1) {
             constraintedFeatures.features.push(af[d]);
         }

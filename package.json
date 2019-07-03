@@ -23,10 +23,10 @@
     },
     "dependencies": {
         "async": "^1.5.2",
-        "body-parser": "^1.17.2",
+        "body-parser": "^1.19.0",
         "compression": "^1.6.1",
-        "ejs": "^2.5.7",
-        "express": "^4.13.4",
+        "ejs": "^2.6.2",
+        "express": "^4.17.1",
         "request": "^2.69.0",
         "requirejs": "^2.2.0",
         "yargs": "^4.3.2"

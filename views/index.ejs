@@ -245,7 +245,7 @@
             // enabled at once, just like the other layers, but it doesn't make much sense because
             // all of these layers cover the entire globe and are opaque.
             addBaseLayerOption(
-                'Choose a base layer',
+                'Bing Maps Aerial',
                 undefined); // the current base layer
             addBaseLayerOption(
                 'Bing Maps Road',
@@ -334,7 +334,7 @@
         function generateSystemCB(systems) {
             for (var x = 0; x < systems.length; x++) {
                 $('#systemsCB').append('<tr><td class="systitle"><input name="sysCB" id=' + "'" + systems[x].sysname +
-                    "'" + 'type="checkbox"/> <span class="square c-' + systems[x].syscolor.substring(1) +
+                    "'" + 'type="checkbox" checked/> <span class="square c-' + systems[x].syscolor.substring(1) +
                     '"></span>&nbsp;&nbsp;' + systems[x].sysname +
                     '</input>&nbsp;&nbsp;</td><td class="densitydetails"><h6 id=' + "'" + systems[x].sysname +
                     "-units'" + '><h6></td></tr>');
@@ -398,13 +398,12 @@
         }
 
         function updateGLData(gjsonData, isFiltered) {
-
-
+            
             humane.log("Rendering Scene..", {
                 addnCls: 'humane-flatty-success'
             });
             if (isFiltered) {
-                viewer.dataSources.removeAll();
+                viewer.dataSources.removeAll(true);
             }
             $("#loadingGIF").hide();
             $("#downloadLink").show();
@@ -424,14 +423,14 @@
                         var min_height = 0;
                         var max_height = 0;
                         var curProps = curFeat.properties.getValue();
-                        if (curProps.hasOwnProperty('min_height')){
-                            
+                        
+                        if (curProps.hasOwnProperty('min_height')){                            
                          min_height = curProps.min_height;
                         }
                         if (curProps.hasOwnProperty('max_height')){
                             max_height = curProps.max_height;
                         }
-                       
+                        
                         var rgb = hexToRgb(curProps.color);
                         var color;
                         if (curProps.isBuilding == 0) {
@@ -441,41 +440,40 @@
                         }
                         // curFeat.polygon.perPositionHeight = true;
                             try {
-
-                            curFeat.polygon.material = color;
-                            curFeat.polygon.outline = true;
-                            if (max_height ==0) {
-                                var h = curFeat.polygon.height;
-                                const heights = [90, -90, 300, -100, -20, 100];                               
-                                max_height = heights[Math.floor(heights.length * Math.random())];
-                                min_height = 0;
-                                // if (h == 'ag') {
-                                //     h = -20;
-                                // } else if (h == 'ug') {
-                                //     hg = -20;
-                                // } else if (h == 'og') {
-                                //     hg = 0;
-                                // } else {
-                                //     h = -30;
-                                // }
-                            }
-                           
-                            // console.log(max_height, min_height);
-                            curFeat.polygon.height = min_height;
-                            curFeat.polygon.extrudedHeight = max_height;
+                                curFeat.polygon.material = color;
+                                curFeat.polygon.outline = true;
+                                max_height = (max_height==0) ? 2:max_height;
+                                // if (max_height ==0) {
+                                    // var h = curFeat.polygon.height;
+                                    // const heights = [90, -90, 300, -100, -20, 100];                               
+                                    // max_height = heights[Math.floor(heights.length * Math.random())];
+                                    // min_height = 0;
+                                    // if (h == 'ag') {
+                                    //     h = -20;
+                                    // } else if (h == 'ug') {
+                                    //     hg = -20;
+                                    // } else if (h == 'og') {
+                                    //     hg = 0;
+                                    // } else {
+                                    //     h = -30;
+                                    // }
+                                // }                           
+                                // console.log(max_height, min_height);
+                                curFeat.polygon.height = min_height;
+                                curFeat.polygon.extrudedHeight = max_height;
                         }
                         catch(err){
                             // console.log("Not polygon")
                         }
-                       try{                           
-
+                       try {                           
                             curFeat.polyline.material = color;
                             curFeat.polyline.outline = true;
-                            if (max_height ===0) {
-                                var h = curFeat.polyline.height;
-                                const heights = [90, -90, 300, -100, -20, 100];
-                                max_height = heights[Math.floor(heights.length * Math.random())];
-                                min_height = 0;
+                            max_height = (max_height==0) ? 2:max_height;
+                            // if (max_height ===0) {
+                                // var h = curFeat.polyline.height;
+                                // const heights = [90, -90, 300, -100, -20, 100];
+                                // max_height = heights[Math.floor(heights.length * Math.random())];
+                                // min_height = 0;
                                 
                                 // if (h == 'ag') {
                                 //     h = -20;
@@ -486,7 +484,7 @@
                                 // } else {
                                 //     h = -30;
                                 // }
-                            } 
+                            // } 
                             // console.log(max_height, min_height);
                             curFeat.polyline.height = min_height;
                             curFeat.polyline.extrudedHeight = max_height;
