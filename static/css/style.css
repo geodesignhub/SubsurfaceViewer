@@ -8,6 +8,9 @@
     display: inline-block;
 }
 
+
+
+
 .c-e54c00-policy,
 .c-ffaa00-policy,
 .c-e69800-policy,
@@ -75,6 +78,11 @@
 .c-006837-policy,
 .c-e168c8-policy,
 .c-404040-policy,
+.c-ff8cc8-policy,
+.c-5a5a5a-policy,
+.c-373737-policy,
+.c-eb827d-policy,
+.c-ffb671-policy,
 .c-cd329b-policy {
     color: black;
     background-size: 5px 5px;
@@ -153,6 +161,11 @@
 .c-006837-policy span,
 .c-e168c8-policy span,
 .c-404040-policy span,
+.c-ff8cc8-policy span,
+.c-5a5a5a-policy span,
+.c-373737-policy span,
+.c-eb827d-policy span,
+.c-ffb671-policy span,
 .c-cd329b-policy span {
     background: #FFFFFF;
 }
@@ -497,6 +510,32 @@
     color: #FFFFFF;
 }
 
+.c-ff8cc8 {
+    background-color: #ff8cc8;
+    color: #FFFFFF;
+}
+
+.c-5a5a5a {
+    background-color: #5a5a5a;
+    color: #FFFFFF;
+}
+
+.c-373737 {
+    background-color: #373737;
+    color: #FFFFFF;
+}
+
+.c-eb827d {
+    background-color: #eb827d;
+    color: #FFFFFF;
+}
+
+.c-ffb671 {
+    background-color: #ffb671;
+    color: #FFFFFF;
+}
+
+
 .c-e54c00-policy {
     background-image: linear-gradient(45deg, transparent 45%, #e54c00 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #e54c00 50%, transparent 55%, transparent 100%);
 }
@@ -768,6 +807,28 @@
 .c-cd329b-policy {
     background-image: linear-gradient(45deg, transparent 45%, #cd329b 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #cd329b 50%, transparent 55%, transparent 100%);
 }
+
+.c-ff8cc8-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ff8cc8 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ff8cc8 50%, transparent 55%, transparent 100%);
+}
+
+.c-5a5a5a-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #5a5a5a 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #5a5a5a 50%, transparent 55%, transparent 100%);
+}
+
+.c-373737-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #373737 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #373737 50%, transparent 55%, transparent 100%);
+}
+
+.c-eb827d-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #eb827d 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #eb827d 50%, transparent 55%, transparent 100%);
+}
+
+.c-ffb671-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #ffb671 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ffb671 50%, transparent 55%, transparent 100%);
+}
+
+
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;
