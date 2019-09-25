@@ -82,6 +82,7 @@
 .c-5a5a5a-policy,
 .c-373737-policy,
 .c-eb827d-policy,
+.c-e18cc8-policy,
 .c-ffb671-policy,
 .c-cd329b-policy {
     color: black;
@@ -164,6 +165,7 @@
 .c-ff8cc8-policy span,
 .c-5a5a5a-policy span,
 .c-373737-policy span,
+.c-e18cc8-policy span,
 .c-eb827d-policy span,
 .c-ffb671-policy span,
 .c-cd329b-policy span {
@@ -477,6 +479,11 @@
 
 .c-c2e699 {
     background-color: #c2e699;
+    color: #FFFFFF;
+}
+
+.c-e18cc8 {
+    background-color: #e18cc8;
     color: #FFFFFF;
 }
 
@@ -826,6 +833,10 @@
 
 .c-ffb671-policy {
     background-image: linear-gradient(45deg, transparent 45%, #ffb671 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #ffb671 50%, transparent 55%, transparent 100%);
+}
+
+.c-e18cc8-policy {
+    background-image: linear-gradient(45deg, transparent 45%, #e18cc8 50%, transparent 55%, transparent 100%), linear-gradient(-45deg, transparent 45%, #e18cc8 50%, transparent 55%, transparent 100%);
 }
 
 
