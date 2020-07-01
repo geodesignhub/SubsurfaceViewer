@@ -152,6 +152,26 @@
                                     data-bind="click: function() { $parent.lower($data, $index()); }, visible: $parent.canLower($index())">▼</button>
                             </td>
                         </tr>
+                        <tr>
+                            <td>Translucency enabled</td>
+                            <td>
+                              <input type="checkbox" data-bind="checked: translucencyEnabled">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Fade by distance</td>
+                            <td>
+                              <input type="checkbox" data-bind="checked: fadeByDistance">
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>Alpha</td>
+                            <td>
+                              <input type="range" min="0.0" max="1.0" step="0.1" data-bind="value: alpha, valueUpdate: 'input'">
+                              <input type="text" size="5" data-bind="value: alpha">
+                            </td>
+                          </tr>
                     </tbody>
                 </table>
             </div>
@@ -198,9 +218,19 @@
         });
 
         var imageryLayers = viewer.imageryLayers;
-
-
+        var scene = viewer.scene;
+        var globe = scene.globe;
+        scene.screenSpaceCameraController.enableCollisionDetection = false;
+            globe.translucency.frontFaceAlphaByDistance = new Cesium.NearFarScalar(
+            400.0,
+            0.0,
+            800.0,
+            1.0
+            );
         var viewModel = {
+            translucencyEnabled: true,
+            fadeByDistance: true,
+            alpha: 0.5,
             layers: [],
             baseLayers: [],
             upLayer: null,
@@ -237,6 +267,21 @@
         var baseLayers = viewModel.baseLayers;
 
         Cesium.knockout.track(viewModel);
+
+        function update() {
+            globe.translucency.enabled = viewModel.translucencyEnabled;
+
+            var alpha = Number(viewModel.alpha);
+            alpha = !isNaN(alpha) ? alpha : 1.0;
+            alpha = Cesium.Math.clamp(alpha, 0.0, 1.0);
+
+            globe.translucency.frontFaceAlphaByDistance.nearValue = alpha;
+            globe.translucency.frontFaceAlphaByDistance.farValue = viewModel.fadeByDistance
+                ? 1.0
+                : alpha;
+
+            }
+            update();
 
 
         function setupLayers() {
